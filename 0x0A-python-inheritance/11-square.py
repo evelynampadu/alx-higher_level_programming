@@ -1,26 +1,21 @@
 #!/usr/bin/python3
-Rectangle = __import__('9-rectangle').Rectangle
 """
-===================================
-module with class BaseGeometry
-===================================
+This program improves a previous Square
 """
 
 
-class Square(Rectangle):
-    """Square class that inherits from Rectangle that inherits BaseGeometry"""
+PrevSquare = __import__('10-square').Square
+
+
+class Square(PrevSquare):
+    """
+    Improved Class Square
+    """
 
     def __init__(self, size):
-        """Method for initialized the attrubutes"""
-
-        super().__init__(size, size)
-        self.integer_validator("size", size)
-        self.__size = size
-
-    def area(self):
-        """rectangle area"""
-
-        return self.__size ** 2
+        """Constructor of the improved Square"""
+        super().__init__(size)
 
     def __str__(self):
-        return "[Square] {}/{}".format(self.__size, self.__size)
+        """String representation of Square"""
+        return '[Square] {0:d}/{0:d}'.format(self.__size)
